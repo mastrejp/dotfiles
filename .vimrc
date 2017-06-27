@@ -3,7 +3,7 @@
 " インストール手順
 "   % mkdir -p ~/.vim/bundle
 "   % git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-"   % clone https://github.com/Shougo/vimproc ~/.vim/bundle/vimproc
+"   % git clone https://github.com/Shougo/vimproc ~/.vim/bundle/vimproc
 "
 "vimを立ち上げて
 ":NeoBundleInstall
@@ -15,13 +15,14 @@ filetype off
 
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/bundle/'))
+  " neobundle#rc is deprecated. So using neobundle#begin and end.
+  " cf. http://qiita.com/musclemikiya/items/58edc801264aca151446
+  " call neobundle#rc(expand('~/.vim/bundle/'))
+  call neobundle#begin(expand('~/.vim/bundle/'))
 endif
-
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
-
 
 """"""""""""""""""""""""""""
 " plugins
@@ -183,10 +184,11 @@ endif
 " see http://www.absolute-keitarou.net/blog/?p=1127
 let g:indent_guides_auto_colors=0
 " for black background
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=0
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=235
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=23
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=66
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=235
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=232
+" for ocean background
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=23
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=66
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=2
 
@@ -206,3 +208,5 @@ if has('syntax')
     augroup END
     call BindingPry()
 endif
+
+call neobundle#end()
