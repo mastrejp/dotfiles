@@ -5,13 +5,16 @@
 # http://qiita.com/magicant/items/d3bb7ea1192e63fba850
 
 # 環境変数
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export EDITOR="vim"
-eval "$(direnv hook bash)"
+
+# for direnv
+#eval "$(direnv hook bash)"
 
 # .node.js用
 #export PATH=/usr/local/git/bin/:$HOME/.nodebrew/current/bin:$PATH
-export PATH=$HOME/.nodebrew/current/bin:$PATH:/usr/local/git/bin/
+export PATH=$HOME/.nodebrew/current/bin:$PATH:/usr/local/git/bin
 
 # .bashrc読込(必ず最後に実行)
 test -r ~/.bashrc && . ~/.bashrc
