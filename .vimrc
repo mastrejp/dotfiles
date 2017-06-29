@@ -130,7 +130,12 @@ set shiftwidth=2
 " set foldmethod=indent
 
 " カラー設定
-colorscheme oceandeep
+"let g:alduin_Shout_Dragon_Aspect = 1
+let g:alduin_Shout_Become_Ethereal = 1
+"let g:alduin_Contract_Vampirism = 1
+"let g:alduin_Shout_Fire_Breath = 1
+colorscheme alduin
+"colorscheme oceandeep
 "colorscheme railscasts
 "colorscheme darkblue
 "colorscheme blue
@@ -183,12 +188,15 @@ endif
 " vim-indent-guides settings
 " see http://www.absolute-keitarou.net/blog/?p=1127
 let g:indent_guides_auto_colors=0
+" for alduin background
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=233
 " for black background
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=235
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=232
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=235
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=232
 " for ocean background
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=23
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=66
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=23
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=66
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=2
 
